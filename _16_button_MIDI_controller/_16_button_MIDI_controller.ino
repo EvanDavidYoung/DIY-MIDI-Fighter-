@@ -66,7 +66,7 @@ const int MIDI_MODE_CCS = 1;
 int midiMode = MIDI_MODE_NOTES;
 
 //Arrays the store the exact note and CC messages each push button will send
-											// 0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15   16  17
+                      // 0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15   16  17
 //const int MIDI_NOTE_NUM_0[NUM_OF_BUTTONS] =   {48, 49, 44, 40, 37, 41, 43, 39, 46, 51, 47, 47, 48, 42, 36, 38, 45, 50};
 const int MIDI_NOTE_NUM_0[NUM_OF_BUTTONS] =   {36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51};
 const int MIDI_NOTE_NUM_1[NUM_OF_BUTTONS] =   {52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67};
@@ -75,6 +75,8 @@ const int MIDI_NOTE_NUM_3[NUM_OF_BUTTONS] =   {84, 85, 86 ,87, 88, 89, 90, 91, 9
 const int MIDI_NOTE_VELS[NUM_OF_BUTTONS] =  {110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110, 110};
 const int MIDI_CC_NUMS[NUM_OF_BUTTONS] =    {51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68};
 const int MIDI_CC_VALS[NUM_OF_BUTTONS] =    {65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65};
+
+int MIDI_NOTE_NUM[NUM_OF_BUTTONS];
 
 //==============================================================================
 //==============================================================================
@@ -146,26 +148,24 @@ void loop()
   
   int analogPotVal = analogRead(bank_pot);
   
-  bankVal = map(analogPotVal, 0, 1023, 0, 1000);
-  
-  int MIDI_NOTE_NUM[NUM_OF_BUTTONS] = [];
+  int bankVal = map(analogPotVal, 0, 1023, 0, 1000);
   
   if (bankVal <= 250){
-	for (int a = 0; a < NUM_OF_BUTTONS; a++){
-		MIDI_NOTE_NUM[a] = MIDI_NOTE_NUM_0[a];
-	}
+  for (int a = 0; a < NUM_OF_BUTTONS; a++){
+    MIDI_NOTE_NUM[a] = MIDI_NOTE_NUM_0[a];
+  }
   } else if (bankVal > 250 && bankVal <= 500){
-	for (int a = 0; a < NUM_OF_BUTTONS; a++){
-		MIDI_NOTE_NUM[a] = MIDI_NOTE_NUM_1[a];
-	}
+  for (int a = 0; a < NUM_OF_BUTTONS; a++){
+    MIDI_NOTE_NUM[a] = MIDI_NOTE_NUM_1[a];
+  }
   } else if (bankVal > 500 && bankVal <= 750){
-	for (int a = 0; a < NUM_OF_BUTTONS; a++){
-		MIDI_NOTE_NUM[a] = MIDI_NOTE_NUM_2[a];
-	}
+  for (int a = 0; a < NUM_OF_BUTTONS; a++){
+    MIDI_NOTE_NUM[a] = MIDI_NOTE_NUM_2[a];
+  }
   } else if (bankVal > 750 && bankVal <= 1000){
-	for (int a = 0; a < NUM_OF_BUTTONS; a++){
-		MIDI_NOTE_NUM[a] = MIDI_NOTE_NUM_3[a];
-	}
+  for (int a = 0; a < NUM_OF_BUTTONS; a++){
+    MIDI_NOTE_NUM[a] = MIDI_NOTE_NUM_3[a];
+  }
   }
 
 // If the below line does not work comment out the below line and uncomment the next line
@@ -187,8 +187,6 @@ void loop()
         usbMIDI.sendControlChange (MIDI_CC_NUMS[i], MIDI_CC_VALS[i], MIDI_CHAN);
     }
     */
-    
-    int 
  
     if (button0.fallingEdge())
     {
@@ -204,7 +202,7 @@ void loop()
     else
         usbMIDI.sendControlChange (MIDI_CC_NUMS[1], MIDI_CC_VALS[0], MIDI_CHAN);
     }
-	if (button2.fallingEdge())
+  if (button2.fallingEdge())
    {
     if (midiMode == MIDI_MODE_NOTES)
         usbMIDI.sendNoteOn(MIDI_NOTE_NUM[2], MIDI_NOTE_VELS[14],MIDI_CHAN);
