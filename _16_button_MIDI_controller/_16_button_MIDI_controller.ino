@@ -21,7 +21,7 @@ const int NUM_OF_BUTTONS = 16;
 const int MIDI_CHAN = 1;
 
 // the analog pin to be used for the bank control potentiometer
-const int bank_pot = 14;    // change it to match your setting
+const int bank_pot = 0;    // change it to match your setting
 
 // Create Bounce objects for each button and switch. The Bounce object
 // automatically deals with contact chatter or "bounce", and
