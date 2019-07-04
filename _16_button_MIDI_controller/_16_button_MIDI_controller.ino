@@ -169,7 +169,7 @@ void loop()
   }
 
 // If the below line does not work comment out the below line and uncomment the next line
-    midiMode = (digitalRead(2) == HIGH) ? MIDI_MODE_CCS : MIDI_MODE_NOTES;
+    midiMode = (digitalRead(17) == HIGH) ? MIDI_MODE_CCS : MIDI_MODE_NOTES;
     // midiMode = button2.fallingEdge() ? MIDI_MODE_CCS : MIDI_MODE_NOTES;
 
     //========================================
