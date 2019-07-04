@@ -303,7 +303,7 @@ void loop()
     else
         usbMIDI.sendControlChange (MIDI_CC_NUMS[15], MIDI_CC_VALS[0], MIDI_CHAN);
   }
-  if (button16.fallingEdge())
+  /*if (button16.fallingEdge())
   {
     if (midiMode == MIDI_MODE_NOTES)
         usbMIDI.sendNoteOn(MIDI_NOTE_NUM[16], MIDI_NOTE_VELS[5],MIDI_CHAN);
@@ -316,7 +316,7 @@ void loop()
         usbMIDI.sendNoteOn(MIDI_NOTE_NUM[17], MIDI_NOTE_VELS[6],MIDI_CHAN);
     else
         usbMIDI.sendControlChange (MIDI_CC_NUMS[17], MIDI_CC_VALS[0], MIDI_CHAN);
-  }
+  }*/
 //RISING EDGE
 
       if (button0.risingEdge())
@@ -401,7 +401,7 @@ void loop()
         usbMIDI.sendNoteOff(MIDI_NOTE_NUM[15], MIDI_NOTE_VELS[9],MIDI_CHAN);  
   }    
   
-  if (button16.risingEdge())
+  /*if (button16.risingEdge())
     {
       if (midiMode == MIDI_MODE_NOTES)
         usbMIDI.sendNoteOff(MIDI_NOTE_NUM[16], MIDI_NOTE_VELS[13],MIDI_CHAN);
@@ -410,7 +410,7 @@ void loop()
     {
       if (midiMode == MIDI_MODE_NOTES)
         usbMIDI.sendNoteOff(MIDI_NOTE_NUM[17], MIDI_NOTE_VELS[13],MIDI_CHAN);
-    }  
+    }  */
 
    
     
