@@ -13,7 +13,7 @@
    
    Use the following info to connect the hardware
    
-   // JUMBLED TO MATCH THE CONNECTION
+   // JUMBLED TO MATCH THE ORIGINAL CODE
 
 	Oct------Note------Number------Button
 	4------C------48------0
@@ -193,7 +193,7 @@ const int DEBOUNCE_TIME = 15;
 
 
 // the analog pin to be used for the bank control potentiometer
-const int bank_pot = 0;    // change it to match the analog pin to which you're connecting the pot
+const int bank_pot = 2;    // change it to match the analog pin to which you're connecting the pot
 
   Bounce button0 = Bounce (0, DEBOUNCE_TIME);
   Bounce button1 = Bounce (1, DEBOUNCE_TIME);
