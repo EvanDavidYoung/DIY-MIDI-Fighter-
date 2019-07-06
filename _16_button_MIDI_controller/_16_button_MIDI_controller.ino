@@ -293,6 +293,7 @@ void loop()
   button22.update();
   button11.update();
   button21.update();
+  button18.update();
   button23.update();                        // button 23.update
   //==============================================================================
   // Check the status of each push button
