@@ -193,7 +193,7 @@ const int DEBOUNCE_TIME = 15;
 
 
 // the analog pin to be used for the bank control potentiometer
-const int bank_pot = 2;    // change it to match the analog pin to which you're connecting the pot
+const int bank_pot = 0;    // change it to match the analog pin to which you're connecting the pot
 
   Bounce button0 = Bounce (0, DEBOUNCE_TIME);
   Bounce button1 = Bounce (1, DEBOUNCE_TIME);
@@ -294,7 +294,8 @@ void loop()
   button11.update();
   button21.update();
   button18.update();
-  button23.update();                        // button 23.update
+  button23.update();
+ 
   //==============================================================================
   // Check the status of each push button
 
