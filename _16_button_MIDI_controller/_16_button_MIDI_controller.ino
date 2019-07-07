@@ -260,7 +260,7 @@ void setup()
   {
     pinMode (i, INPUT_PULLUP);
   }
-	Serial.begin(115200);
+// 	Serial.begin(115200);
 }
 
 //==============================================================================
@@ -305,7 +305,7 @@ void loop()
   int analogPotVal = analogRead(bank_pot);
   
   int bankVal = map(analogPotVal, 0, 1023, 0, 1000);
-	  Serial.println(bankVal);
+// 	  Serial.println(bankVal);
   
   if (bankVal <= 250){
   for (int a = 0; a < NUM_OF_BUTTONS; a++){
