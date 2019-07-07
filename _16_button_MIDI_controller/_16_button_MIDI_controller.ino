@@ -307,23 +307,41 @@ void loop()
   int bankVal = map(analogPotVal, 0, 1023, 0, 1000);
 // 	  Serial.println(bankVal);
   
-  if (bankVal <= 250){
-  for (int a = 0; a < NUM_OF_BUTTONS; a++){
-    MIDI_NOTE_NUM[a] = MIDI_NOTE_NUM_0[a];
-  }
-  } else if (bankVal > 250 && bankVal <= 500){
-  for (int a = 0; a < NUM_OF_BUTTONS; a++){
-    MIDI_NOTE_NUM[a] = MIDI_NOTE_NUM_1[a];
-  }
-  } else if (bankVal > 500 && bankVal <= 750){
-  for (int a = 0; a < NUM_OF_BUTTONS; a++){
-    MIDI_NOTE_NUM[a] = MIDI_NOTE_NUM_2[a];
-  }
-  } else if (bankVal > 750 && bankVal <= 1000){
-  for (int a = 0; a < NUM_OF_BUTTONS; a++){
-    MIDI_NOTE_NUM[a] = MIDI_NOTE_NUM_3[a];
-  }
-  }
+//   if (bankVal <= 250){
+//   for (int a = 0; a < NUM_OF_BUTTONS; a++){
+//     MIDI_NOTE_NUM[a] = MIDI_NOTE_NUM_0[a];
+//   }
+//   } else if (bankVal > 250 && bankVal <= 500){
+//   for (int a = 0; a < NUM_OF_BUTTONS; a++){
+//     MIDI_NOTE_NUM[a] = MIDI_NOTE_NUM_1[a];
+//   }
+//   } else if (bankVal > 500 && bankVal <= 750){
+//   for (int a = 0; a < NUM_OF_BUTTONS; a++){
+//     MIDI_NOTE_NUM[a] = MIDI_NOTE_NUM_2[a];
+//   }
+//   } else if (bankVal > 750 && bankVal <= 1000){
+//   for (int a = 0; a < NUM_OF_BUTTONS; a++){
+//     MIDI_NOTE_NUM[a] = MIDI_NOTE_NUM_3[a];
+//   }
+//   }
+	  
+	   if (analogPotVal <= 255){
+	  for (int a = 0; a < NUM_OF_BUTTONS; a++){
+	    MIDI_NOTE_NUM[a] = MIDI_NOTE_NUM_0[a];
+	  }
+	  } else if (analogPotVal > 255 && analogPotVal <= 510){
+	  for (int a = 0; a < NUM_OF_BUTTONS; a++){
+	    MIDI_NOTE_NUM[a] = MIDI_NOTE_NUM_1[a];
+	  }
+	  } else if (analogPotVal > 510 && analogPotVal <= 765){
+	  for (int a = 0; a < NUM_OF_BUTTONS; a++){
+	    MIDI_NOTE_NUM[a] = MIDI_NOTE_NUM_2[a];
+	  }
+	  } else if (analogPotVal > 765 && analogPotVal <= 1023){
+	  for (int a = 0; a < NUM_OF_BUTTONS; a++){
+	    MIDI_NOTE_NUM[a] = MIDI_NOTE_NUM_3[a];
+	  }
+	  }
 
 
 // If the below line does not work comment out the below line and uncomment the next line
